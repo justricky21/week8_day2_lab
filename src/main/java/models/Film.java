@@ -5,15 +5,18 @@ import javax.persistence.*;
 @Entity
 @Table(name = "films")
 public class Film {
-    String title;
-    int ageRating;
-    int id;
-    Director director;
+   private String title;
+   private int ageRating;
+   private int id;
+   private Director director;
+   private Genre genre;
 
-    public Film(String title, int ageRating, Director director) {
+
+    public Film(String title, int ageRating, Director director, Genre genre) {
         this.title = title;
         this.ageRating = ageRating;
         this.director = director;
+        this.genre = genre;
     }
 
     public Film() {
@@ -56,5 +59,14 @@ public class Film {
 
     public void setDirector(Director director) {
         this.director = director;
+    }
+
+    @Enumerated(value = EnumType.STRING)
+    public Genre getGenre() {
+        return genre;
+    }
+
+    public void setGenre(Genre genre) {
+        this.genre = genre;
     }
 }
