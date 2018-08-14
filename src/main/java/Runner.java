@@ -20,7 +20,7 @@ public class Runner {
         Film pulp = new Film("Pulp Fiction", 10, quentin);
         DBHelper.save(pulp);
 
-        Film basterds = new Film("Inglorius Basterds", 21, quentin);
+        Film basterds = new Film("Inglorious Basterds", 21, quentin);
         DBHelper.save(basterds);
 
         Film shining = new Film("The Shining,", 7, kubrick);
@@ -36,9 +36,9 @@ public class Runner {
 
         foundFilm.setAgeRating(105);
         DBHelper.update(foundFilm);
-//
-//        Film anotherFoundFilm = DBHelper.findById(2, Film.class);
-//        DBHelper.delete(anotherFoundFilm);
+
+        Film anotherFoundFilm = DBHelper.findById(2, Film.class);
+        DBHelper.delete(anotherFoundFilm);
 
     }
 }
